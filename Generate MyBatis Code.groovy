@@ -45,7 +45,7 @@ def generate(table, dir) {
 static def generateEntity(out, tableName, className, fields, packageName) {
     out.println "package $packageName" + ".entity;"
     out.println ""
-    out.println "import com.edu.platform.common.base.BaseEntity;"
+    out.println "import com.test.common.base.BaseEntity;"
     out.println "import lombok.Data;"
     out.println "import lombok.EqualsAndHashCode;"
     out.println "import javax.persistence.Table;"
@@ -74,7 +74,7 @@ static def generateMapper(out, className, packageName) {
     out.println "package $packageName" + ".mapper;"
     out.println ""
 
-    out.println "import com.edu.platform.common.base.BaseMapper;"
+    out.println "import com.test.common.base.BaseMapper;"
     out.println "import $packageName" + ".entity.$className;"
     out.println ""
 
@@ -88,7 +88,7 @@ static def generateService(out, className, packageName) {
     out.println "package $packageName" + ".service;"
     out.println ""
 
-    out.println "import com.edu.platform.common.base.BaseService;"
+    out.println "import com.test.common.base.BaseService;"
     out.println "import $packageName" + ".entity.$className;"
     out.println ""
 
@@ -104,7 +104,7 @@ static def generateServiceImpl(out, className, packageName) {
 
     out.println "import lombok.extern.slf4j.Slf4j;"
     out.println "import org.springframework.stereotype.Service;"
-    out.println "import com.edu.platform.common.base.BaseServiceImpl;"
+    out.println "import com.test.common.base.BaseServiceImpl;"
     out.println "import $packageName" + ".entity.$className;"
     out.println "import $packageName" + ".mapper.$className" + "Mapper;"
     out.println "import $packageName" + ".service.$className" + "Service;"
