@@ -1,0 +1,15 @@
+#set( $LastDotIndex = $CLASS_NAME.lastIndexOf(".") + 1 )
+#set( $CamelCaseName = "$CLASS_NAME.substring($LastDotIndex)" )
+#set( $CamelCaseName = "$CamelCaseName.substring(0, 1).toLowerCase()$CamelCaseName.substring(1)")
+
+import static org.junit.Assert.*;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+#parse("File Header.java")
+@Slf4j
+public class ${NAME} {
+
+    @Autowired
+    private ${CLASS_NAME} ${CamelCaseName};
+  ${BODY}
+}
