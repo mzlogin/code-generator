@@ -29,6 +29,12 @@ def generate(table, dir) {
     dirPath = dir.getAbsolutePath()
     packageName = calcPackageName(dirPath)
 
+    // ensure directory exists
+    new File(dirPath + File.separator + "entity").mkdirs()
+    new File(dirPath + File.separator + "mapper").mkdirs()
+    new File(dirPath + File.separator + "service").mkdirs()
+    new File(dirPath + File.separator + "service" + File.separator + "impl").mkdirs()
+
     // Generate POJO
     new File(dirPath + File.separator + "entity", className + ".java").withPrintWriter("utf-8") { out -> generateEntity(out, table.getName(), className, fields, packageName) }
 
